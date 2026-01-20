@@ -1,7 +1,7 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["response", "flags", "clear_active", "proposal"],
+  "required": ["response", "flags", "clear_active", "proposal", "poll"],
   "properties": {
     "response": {
       "type": "string",
@@ -29,9 +29,52 @@
     },
     "proposal": {
       "$ref": "#/$defs/proposal"
+    },
+    "poll": {
+      "$ref": "#/$defs/poll"
     }
   },
   "$defs": {
+    "poll": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "poll_id", "question", "options"],
+      "properties": {
+        "enabled": {
+          "type": "integer",
+          "enum": [0, 1],
+          "description": "Set to 1 to ask a lightweight multiple-choice question (poll)."
+        },
+        "poll_id": {
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
+          "description": "Stable identifier for this poll. Null when enabled=0."
+        },
+        "question": {
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
+          "description": "Poll question text to show the user. Null when enabled=0."
+        },
+        "options": {
+          "anyOf": [
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": { "$ref": "#/$defs/poll_option" }
+            },
+            { "type": "null" }
+          ],
+          "description": "Poll options. Null when enabled=0."
+        }
+      }
+    },
+    "poll_option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
     "proposal": {
       "type": "object",
       "additionalProperties": false,

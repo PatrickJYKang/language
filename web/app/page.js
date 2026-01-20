@@ -7,6 +7,39 @@ import remarkGfm from "remark-gfm";
 
 const STORAGE_KEY = "language_web_state_v2";
 
+const MARKDOWN_COMPONENTS = {
+  p: ({ children }) => <p className="m-0 whitespace-pre-wrap">{children}</p>,
+  a: ({ children, href }) => (
+    <a href={href} className="text-indigo-300 underline" target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  ),
+  ul: ({ children }) => <ul className="my-2 list-disc pl-5">{children}</ul>,
+  ol: ({ children }) => <ol className="my-2 list-decimal pl-5">{children}</ol>,
+  li: ({ children }) => <li className="my-1">{children}</li>,
+  code: ({ inline, children }) => {
+    if (inline) {
+      return <code className="rounded bg-zinc-900 px-1 py-0.5 text-[0.9em]">{children}</code>;
+    }
+    return <code className="text-[0.9em]">{children}</code>;
+  },
+  pre: ({ children }) => <pre className="my-2 overflow-x-auto rounded-xl bg-zinc-900 p-3">{children}</pre>,
+  blockquote: ({ children }) => <blockquote className="my-2 border-l-2 border-zinc-600 pl-3 text-zinc-200">{children}</blockquote>,
+  h1: ({ children }) => <h1 className="mb-2 mt-3 text-base font-semibold">{children}</h1>,
+  h2: ({ children }) => <h2 className="mb-2 mt-3 text-sm font-semibold">{children}</h2>,
+  h3: ({ children }) => <h3 className="mb-2 mt-3 text-sm font-semibold">{children}</h3>,
+};
+
+function MarkdownContent({ text }) {
+  return (
+    <div className="prose max-w-none prose-invert">
+      <ReactMarkdown remarkPlugins={[remarkGfm]} components={MARKDOWN_COMPONENTS}>
+        {String(text ?? "")}
+      </ReactMarkdown>
+    </div>
+  );
+}
+
 function safeJsonParse(raw) {
   try {
     return JSON.parse(raw);
@@ -70,39 +103,7 @@ export default function Page() {
   function renderMessageContent(m) {
     if (m?.role !== "assistant") return m?.content;
 
-    return (
-      <div className="prose max-w-none prose-invert">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            p: ({ children }) => <p className="m-0 whitespace-pre-wrap">{children}</p>,
-            a: ({ children, href }) => (
-              <a href={href} className="text-indigo-300 underline" target="_blank" rel="noreferrer">
-                {children}
-              </a>
-            ),
-            ul: ({ children }) => <ul className="my-2 list-disc pl-5">{children}</ul>,
-            ol: ({ children }) => <ol className="my-2 list-decimal pl-5">{children}</ol>,
-            li: ({ children }) => <li className="my-1">{children}</li>,
-            code: ({ inline, children }) => {
-              if (inline) {
-                return <code className="rounded bg-zinc-900 px-1 py-0.5 text-[0.9em]">{children}</code>;
-              }
-              return <code className="text-[0.9em]">{children}</code>;
-            },
-            pre: ({ children }) => <pre className="my-2 overflow-x-auto rounded-xl bg-zinc-900 p-3">{children}</pre>,
-            blockquote: ({ children }) => (
-              <blockquote className="my-2 border-l-2 border-zinc-600 pl-3 text-zinc-200">{children}</blockquote>
-            ),
-            h1: ({ children }) => <h1 className="mb-2 mt-3 text-base font-semibold">{children}</h1>,
-            h2: ({ children }) => <h2 className="mb-2 mt-3 text-sm font-semibold">{children}</h2>,
-            h3: ({ children }) => <h3 className="mb-2 mt-3 text-sm font-semibold">{children}</h3>,
-          }}
-        >
-          {String(m?.content ?? "")}
-        </ReactMarkdown>
-      </div>
-    );
+    return <MarkdownContent text={m?.content} />;
   }
 
   useEffect(() => {
@@ -395,6 +396,7 @@ export default function Page() {
         setMessages((prev) => {
           const msg = { role: "assistant", content: result.response, flags: result.flags };
           if (result?.proposal?.enabled === 1) msg.proposal = result.proposal;
+          if (result?.poll?.enabled === 1) msg.poll = result.poll;
           return [...prev, msg];
         });
       }
@@ -413,17 +415,45 @@ export default function Page() {
   async function onSend() {
     const text = inputText.trim();
     if (!text || loading) return;
+    setInputText("");
+    await sendText(text);
+  }
+
+  function markPollAnswered({ idx, optionId }) {
+    setMessages((prev) =>
+      prev.map((m, i) => {
+        if (i !== idx) return m;
+        if (!m?.poll || m.poll?.enabled !== 1) return m;
+        return { ...m, poll_answer: { option_id: optionId } };
+      })
+    );
+  }
+
+  async function onPollOption(idx, poll, option) {
+    if (loading) return;
+    if (!poll || poll.enabled !== 1) return;
+    if (typeof option?.id !== "string") return;
+
+    markPollAnswered({ idx, optionId: option.id });
+
+    const idLooksGood = /^[a-z0-9_\-]{1,32}$/i.test(option.id);
+    const reply = idLooksGood ? option.id : String(option?.text ?? option.id);
+    await sendText(reply);
+  }
+
+  async function sendText(text) {
+    const cleaned = String(text ?? "").trim();
+    if (!cleaned || loading) return;
 
     setError("");
-    setInputText("");
 
     const history = messages;
-    const nextMessages = [...history, { role: "user", content: text }];
+    const nextMessages = [...history, { role: "user", content: cleaned }];
     setMessages(nextMessages);
 
     if (conversationMode === "onboarding") {
       if (onboardingStep === 0) {
-        setPlacement((prev) => ({ ...prev, levelText: text }));
+        setPlacement((prev) => ({ ...prev, levelText: cleaned }));
         setMessages((prev) => [
           ...prev,
           {
@@ -438,7 +468,7 @@ export default function Page() {
       if (onboardingStep === 1) {
         const reportedLevel = placement?.levelText ?? "";
         const approxLevel = inferApproxLevel(reportedLevel);
-        setPlacement((prev) => ({ ...prev, focusText: text }));
+        setPlacement((prev) => ({ ...prev, focusText: cleaned }));
 
         setLoading(true);
         try {
@@ -446,7 +476,7 @@ export default function Page() {
             "We are starting a new conversation and need a placement exercise.",
             `User self-reported level: ${reportedLevel}`,
             `Approx level (coarse): ${approxLevel}`,
-            `User focus: ${text}`,
+            `User focus: ${cleaned}`,
             "Task: Propose exactly one placement exercise as proposal.enabled=1 with proposal.problem_type=free_response.",
             "Do not propose any other exercise types.",
             "In response, briefly acknowledge the info and instruct the user to click Start exercise.",
@@ -461,6 +491,7 @@ export default function Page() {
             setMessages((prev) => {
               const msg = { role: "assistant", content: result.response, flags: result.flags };
               if (result?.proposal?.enabled === 1) msg.proposal = result.proposal;
+              if (result?.poll?.enabled === 1) msg.poll = result.poll;
               return [...prev, msg];
             });
           }
@@ -489,12 +520,13 @@ export default function Page() {
 
     setLoading(true);
     try {
-      const result = await callApi({ mode: requestMode, userText: text, messagesOverride: nextMessages });
+      const result = await callApi({ mode: requestMode, userText: cleaned, messagesOverride: nextMessages });
 
       if (typeof result?.response === "string") {
         setMessages((prev) => {
           const msg = { role: "assistant", content: result.response, flags: result.flags };
           if (result?.proposal?.enabled === 1) msg.proposal = result.proposal;
+          if (result?.poll?.enabled === 1) msg.poll = result.poll;
           return [...prev, msg];
         });
       }
@@ -540,6 +572,7 @@ export default function Page() {
         setMessages((prev) => {
           const msg = { role: "assistant", content: result.response, flags: result.flags };
           if (result?.proposal?.enabled === 1) msg.proposal = result.proposal;
+          if (result?.poll?.enabled === 1) msg.poll = result.poll;
           return [...prev, msg];
         });
       }
@@ -551,7 +584,8 @@ export default function Page() {
         setAttempt(null);
         setGrade(null);
 
-        await triggerPostClear({ cleared, clearedOutcome, messagesOverride: [...nextMessages, { role: "assistant", content: result.response }] });
+        const postClearMessages = [...messages, { role: "assistant", content: result.response }];
+        await triggerPostClear({ cleared, clearedOutcome, messagesOverride: postClearMessages });
       }
 
       if (result?.proposal?.enabled === 1) {
@@ -604,7 +638,33 @@ export default function Page() {
       setActive(null);
       setAttempt(null);
       triggerPostClear({ cleared, clearedOutcome });
+    } else {
+      setMessages((prev) => {
+        const last = prev[prev.length - 1];
+        if (last?.help_offer?.enabled === 1 && last?.help_offer?.exercise_id === active?.exercise_id) return prev;
+        return [
+          ...prev,
+          {
+            role: "assistant",
+            content: "It looks like that answer isn't fully correct. Want help?",
+            help_offer: { enabled: 1, exercise_id: active?.exercise_id ?? null },
+          },
+        ];
+      });
     }
+  }
+
+  async function onAcceptHelpOffer(idx) {
+    if (loading) return;
+    setMessages((prev) =>
+      prev.map((m, i) => {
+        if (i !== idx) return m;
+        if (m?.help_offer?.enabled !== 1) return m;
+        if (m?.help_offer_accepted === 1) return m;
+        return { ...m, help_offer_accepted: 1 };
+      })
+    );
+    await sendText("Yes — please help me with this exercise.");
   }
 
   function toggleMcOption(id) {
@@ -700,6 +760,52 @@ export default function Page() {
                             </div>
                           </div>
                         ) : null}
+
+                        {m.role === "assistant" && m.poll?.enabled === 1 ? (
+                          <div className="mt-3 rounded-xl border border-zinc-700 bg-zinc-900/60 p-3">
+                            <div className="text-xs text-zinc-300">Quick choice</div>
+                            <div className="mt-1 text-sm text-zinc-100">
+                              <MarkdownContent text={m.poll.question} />
+                            </div>
+                            <div className="mt-3 flex flex-wrap gap-2">
+                              {Array.isArray(m.poll.options)
+                                ? m.poll.options.map((o) => {
+                                    const answered = m?.poll_answer?.option_id != null;
+                                    const chosen = String(m?.poll_answer?.option_id ?? "") === String(o.id);
+                                    return (
+                                      <button
+                                        key={o.id}
+                                        onClick={() => onPollOption(idx, m.poll, o)}
+                                        disabled={loading || answered}
+                                        className={
+                                          chosen
+                                            ? "rounded-lg border border-indigo-500 bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white disabled:opacity-60"
+                                            : "rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-xs font-medium text-zinc-100 hover:bg-zinc-800 disabled:opacity-50"
+                                        }
+                                      >
+                                        {o.text}
+                                      </button>
+                                    );
+                                  })
+                                : null}
+                            </div>
+                          </div>
+                        ) : null}
+
+                        {m.role === "assistant" && m.help_offer?.enabled === 1 ? (
+                          <div className="mt-3 rounded-xl border border-zinc-700 bg-zinc-900/60 p-3">
+                            <div className="text-xs text-zinc-300">Need a hint?</div>
+                            <div className="mt-3">
+                              <button
+                                onClick={() => onAcceptHelpOffer(idx)}
+                                disabled={loading || m?.help_offer_accepted === 1}
+                                className="rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-indigo-500 disabled:opacity-50"
+                              >
+                                Yes
+                              </button>
+                            </div>
+                          </div>
+                        ) : null}
                       </div>
                     </div>
                   ))}
@@ -752,11 +858,7 @@ export default function Page() {
                 <div className="flex flex-col gap-3">
                   <div className="text-sm text-zinc-200">{exercise.title}</div>
                   <div className="flex flex-col gap-2 rounded-xl border border-zinc-800 bg-zinc-950 p-3">
-                    {exercise.lines.map((line, idx) => (
-                      <div key={idx} className="text-sm text-zinc-200">
-                        {line}
-                      </div>
-                    ))}
+                    <MarkdownContent text={exercise.lines.join("\n\n")} />
                   </div>
 
                   <div className="flex flex-col gap-2">
@@ -774,12 +876,38 @@ export default function Page() {
                       <div className="flex flex-col gap-2">
                         {active.fill_in_blank.blanks.map((b) => (
                           <div key={b.id} className="flex flex-col gap-1">
-                            <div className="text-sm text-zinc-200">{b.text_with_placeholder}</div>
-                            <input
-                              value={typeof attempt?.[b.id] === "string" ? attempt[b.id] : ""}
-                              onChange={(e) => setAttempt((prev) => ({ ...(prev || {}), [b.id]: e.target.value }))}
-                              className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500"
-                            />
+                            <div className="flex flex-wrap items-center gap-2 text-sm text-zinc-200">
+                              {(() => {
+                                const raw = String(b.text_with_placeholder ?? "");
+                                const parts = raw.split(/_{2,}/);
+                                const val = typeof attempt?.[b.id] === "string" ? attempt[b.id] : "";
+                                if (parts.length < 2) {
+                                  return (
+                                    <>
+                                      <span>{raw}</span>
+                                      <input
+                                        value={val}
+                                        onChange={(e) => setAttempt((prev) => ({ ...(prev || {}), [b.id]: e.target.value }))}
+                                        className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm outline-none focus:border-zinc-500"
+                                      />
+                                    </>
+                                  );
+                                }
+
+                                const after = parts.slice(1).join("____");
+                                return (
+                                  <>
+                                    <span>{parts[0]}</span>
+                                    <input
+                                      value={val}
+                                      onChange={(e) => setAttempt((prev) => ({ ...(prev || {}), [b.id]: e.target.value }))}
+                                      className="w-40 rounded-lg border border-zinc-700 bg-zinc-950 px-2 py-1.5 text-sm outline-none focus:border-zinc-500"
+                                    />
+                                    <span>{after}</span>
+                                  </>
+                                );
+                              })()}
+                            </div>
                           </div>
                         ))}
 

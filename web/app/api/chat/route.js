@@ -93,6 +93,62 @@ function redactActiveForModel(active) {
   return cloned;
 }
 
+function disabledProposal() {
+  return {
+    enabled: 0,
+    proposal_id: null,
+    problem_type: null,
+    translation: null,
+    fill_in_blank: null,
+    multiple_choice: null,
+    free_response: null,
+  };
+}
+
+function disabledPoll() {
+  return {
+    enabled: 0,
+    poll_id: null,
+    question: null,
+    options: null,
+  };
+}
+
+function normalizeModelOutput(parsed, { effectiveMode }) {
+  const out = parsed && typeof parsed === "object" ? parsed : {};
+
+  if (!out.proposal || typeof out.proposal !== "object") out.proposal = disabledProposal();
+  if (!out.poll || typeof out.poll !== "object") out.poll = disabledPoll();
+
+  if (out.proposal?.enabled !== 1) out.proposal = disabledProposal();
+  if (out.poll?.enabled !== 1) out.poll = disabledPoll();
+  if (out.clear_active !== 1) out.clear_active = 0;
+
+  if (effectiveMode === "help") {
+    out.poll = disabledPoll();
+    return out;
+  }
+
+  const pollEnabled = out.poll?.enabled === 1;
+  const proposalEnabled = out.proposal?.enabled === 1;
+  const clearActive = out.clear_active === 1;
+
+  if (pollEnabled && clearActive) {
+    out.poll = disabledPoll();
+    return out;
+  }
+
+  if (pollEnabled && proposalEnabled) {
+    out.proposal = disabledProposal();
+  }
+
+  if (pollEnabled) {
+    out.clear_active = 0;
+  }
+
+  return out;
+}
+
 export async function POST(req) {
   try {
     const apiKey = process.env.OPENAI_API_KEY;
@@ -191,7 +247,8 @@ export async function POST(req) {
 
     const parsed = JSON.parse(raw);
 
-    return Response.json(parsed, { status: 200 });
+    const normalized = normalizeModelOutput(parsed, { effectiveMode });
+    return Response.json(normalized, { status: 200 });
   } catch (e) {
     return Response.json({ error: e.message }, { status: 500 });
   }

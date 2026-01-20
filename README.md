@@ -33,6 +33,21 @@ Single chatbot conversation that helps with learning second languages.
   - In help mode, the model sees the active exercise and the user’s current work/attempt.
   - The model provides hints, explanations, corrections, and a suggested next step.
 
+- **Polls (quick multiple-choice questions)**
+  - In normal chat, the assistant can ask a lightweight question with a few clickable options.
+  - Polls are distinct from exercises: answering a poll does not start or clear an exercise.
+  - Polls are disabled during exercise-help turns.
+
+- **Markdown rendering**
+  - Assistant messages and active exercise text support Markdown (including GitHub-flavored Markdown).
+
+- **Inline fill-in-the-blank inputs**
+  - Fill-in-the-blank exercises render the user's input fields inline inside the sentence at placeholder positions.
+
+- **Wrong-answer help offer**
+  - When an objective exercise submission is incorrect, the UI appends a short help offer with a “Yes” button.
+  - Clicking “Yes” sends a help request to the assistant (the user can still type freely instead).
+
 - **Programmable response flags**
   - Every assistant response includes `flags.is_help` and `flags.is_post_clear`.
   - These let the UI tell normal chat responses apart from exercise-help responses and post-clear follow-ups.
@@ -62,6 +77,11 @@ Single chatbot conversation that helps with learning second languages.
     - `proposal`: always present; contains an `enabled` flag.
       - If `proposal.enabled` is `0`, there is no new exercise proposal and all `proposal` payloads are `null`.
       - If `proposal.enabled` is `1`, the app shows an exercise proposal UI in the chat.
+    - `poll`: always present; contains an `enabled` flag.
+      - If `poll.enabled` is `0`, there is no poll and `poll` fields are empty strings/empty arrays.
+      - If `poll.enabled` is `1`, the app shows a poll UI in the chat with clickable options.
+  - XOR rule: the model must not return a poll and an exercise proposal in the same turn. (If a poll is returned, `proposal.enabled` must be `0`.)
+  - A poll must not be returned together with `clear_active = 1`.
   - Proposals are not automatically active: the user must click a “Start exercise” control to activate a proposal.
   - `proposal.problem_type` selects which per-type payload to show (`proposal.translation`, `proposal.fill_in_blank`, `proposal.multiple_choice`, `proposal.free_response`).
   - Non-selected payloads are set to `null`.
@@ -106,8 +126,8 @@ flowchart TD
   C --> D[POST /api/chat<br/>mode=chat or help]
   D --> E[Build system prompt from prompts.json]
   E --> F[Call OpenAI Responses API with json schema format]
-  F --> G[Parse JSON into response flags clear_active proposal]
-  G --> H[Render assistant response and optional proposal]
+  F --> G[Parse JSON into response flags clear_active proposal poll]
+  G --> H[Render assistant response and optional proposal or poll]
   H --> I{Clear active?}
   I -->|yes| J[Clear active exercise]
   J --> K[POST /api/chat<br/>mode=post_clear]
@@ -146,6 +166,10 @@ Every model response must match `schema.json`:
 - `proposal`: always present and always has all required fields.
   - When no exercise is being proposed, the model sets `proposal.enabled = 0` and all per-type payloads are `null`.
   - When an exercise is proposed, the model sets `proposal.enabled = 1`, sets `proposal.problem_type`, and fills exactly one payload (`translation`, `fill_in_blank`, `multiple_choice`, or `free_response`).
+- `poll`: always present and always has all required fields.
+  - When no poll is being proposed, the model sets `poll.enabled = 0`.
+  - When a poll is proposed, the model sets `poll.enabled = 1` and fills `poll.question` and `poll.options`.
+  - Polls are mutually exclusive with `proposal.enabled = 1` and with `clear_active = 1`.
 
 ### Request modes
 
@@ -153,6 +177,7 @@ Normal chat (`mode=chat`):
 
 - The app sends the user text plus recent conversation turns.
 - The model may set `proposal.enabled = 1` to propose a new exercise.
+- The model may set `poll.enabled = 1` to ask a lightweight multiple-choice question.
 
 Exercise help (`mode=help`):
 
@@ -181,8 +206,8 @@ sequenceDiagram
   end
   A->>O: responses.create(input=history, text.format=json_schema)
   O-->>A: JSON matching schema.json
-  A-->>W: {response, flags, clear_active, proposal}
-  W-->>U: render response + optional proposed exercise
+  A-->>W: {response, flags, clear_active, proposal, poll}
+  W-->>U: render response + optional proposal or poll
   opt exercise cleared
     W->>A: POST mode=post_clear + cleared info
     A->>O: responses.create(input=history, text.format=json_schema)
