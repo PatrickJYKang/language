@@ -1,5 +1,7 @@
 # Journal
 
+This is _not_ a README. That is at [README.md](README.md), which contains the technical details of the app.
+
 Much of this app was built in with the help of GPT-5.2. See the below session log for a step-by-step account of the process. Besides that, here also are some reflections first on the development of the product, as well as on the testing process.
 
 ## Session Log

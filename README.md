@@ -2,6 +2,8 @@
 
 Single chatbot conversation that helps with learning second languages.
 
+For documentation of process and development, see [journal.md](journal.md).
+
 ## Features
 
 - **Single, infinite chatbot thread**
@@ -102,6 +104,19 @@ Single chatbot conversation that helps with learning second languages.
 - **UI**
   - Web GUI (Next.js + Tailwind) under `web/`.
   - Legacy CLI (`cli.mjs`) is still available but is not the primary UI.
+
+## Repository structure
+
+- `web/`: Next.js web app (primary UI)
+  - `web/app/page.js`: main UI (chat + exercise panel)
+  - `web/app/api/chat/route.js`: server-side OpenAI call + Structured Outputs normalization
+- `schema.json`: OpenAI Structured Outputs JSON Schema (authoritative contract for model responses)
+- `prompts.json`: prompt templates / system instruction lines used by the API route
+- `README.md`: technical overview and how to run the app
+- `journal.md`: development log and reflections
+- `cli.mjs`: legacy CLI entrypoint (not the primary UI)
+- `language_state.json`: legacy CLI persisted state
+- `.env` (not committed): local environment variables (e.g. `OPENAI_API_KEY`, optional `OPENAI_MODEL`)
 
 ## How it works
 
