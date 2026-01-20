@@ -1,0 +1,211 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["response", "flags", "clear_active", "proposal"],
+  "properties": {
+    "response": {
+      "type": "string",
+      "description": "Assistant message to display in the main chat UI. Always present."
+    },
+    "flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["is_help", "is_post_clear"],
+      "properties": {
+        "is_help": {
+          "type": "boolean",
+          "description": "True when this response is treating the user's message as help for an active exercise."
+        },
+        "is_post_clear": {
+          "type": "boolean",
+          "description": "True when this response is automatically generated right after an exercise was cleared."
+        }
+      }
+    },
+    "clear_active": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Set to 1 when the assistant wants the app to clear the currently active exercise."
+    },
+    "proposal": {
+      "$ref": "#/$defs/proposal"
+    }
+  },
+  "$defs": {
+    "proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "proposal_id",
+        "problem_type",
+        "translation",
+        "fill_in_blank",
+        "multiple_choice",
+        "free_response"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "integer",
+          "description": "Set to 1 to propose a new exercise (not automatically active), otherwise 0.",
+          "enum": [0, 1]
+        },
+        "proposal_id": {
+          "anyOf": [{ "type": "string" }, { "type": "null" }],
+          "description": "Stable identifier for this proposal. Null when enabled=0."
+        },
+        "problem_type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "enum": ["translation", "fill_in_blank", "multiple_choice", "free_response"]
+            },
+            { "type": "null" }
+          ],
+          "description": "Which payload to read when enabled=1. Null when enabled=0."
+        },
+        "translation": {
+          "anyOf": [{ "$ref": "#/$defs/translation_problem" }, { "type": "null" }],
+          "description": "Translation exercise payload when problem_type=translation. Null otherwise."
+        },
+        "fill_in_blank": {
+          "anyOf": [{ "$ref": "#/$defs/fill_in_blank_problem" }, { "type": "null" }],
+          "description": "Fill-in-the-blank exercise payload when problem_type=fill_in_blank. Null otherwise."
+        },
+        "multiple_choice": {
+          "anyOf": [{ "$ref": "#/$defs/multiple_choice_problem" }, { "type": "null" }],
+          "description": "Multiple-choice exercise payload when problem_type=multiple_choice. Null otherwise."
+        },
+        "free_response": {
+          "anyOf": [{ "$ref": "#/$defs/free_response_problem" }, { "type": "null" }],
+          "description": "Free-response exercise payload when problem_type=free_response. Null otherwise."
+        }
+      }
+    },
+    "translation_problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_language", "target_language", "direction", "text"],
+      "properties": {
+        "source_language": {
+          "type": "string",
+          "description": "Language of the given text."
+        },
+        "target_language": {
+          "type": "string",
+          "description": "Language the user should produce."
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["to_target", "from_target"],
+          "description": "to_target means translate source_language -> target_language."
+        },
+        "text": {
+          "type": "string",
+          "description": "The text to translate."
+        }
+      }
+    },
+    "fill_in_blank_problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "prompt", "blanks"],
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Language the exercise is written in."
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Instructions shown above the blanks."
+        },
+        "blanks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/blank" },
+          "description": "One or more fill-in-the-blank items."
+        }
+      }
+    },
+    "blank": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text_with_placeholder", "expected_answers"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable identifier for this blank within the exercise."
+        },
+        "text_with_placeholder": {
+          "type": "string",
+          "description": "Text containing a placeholder like ____ where the user fills in the answer."
+        },
+        "expected_answers": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Acceptable answers for the blank. Used for system-checked grading."
+        }
+      }
+    },
+    "multiple_choice_problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "prompt", "allow_multiple", "options", "correct_option_ids"],
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Language the exercise is written in."
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Question or instruction shown above the options."
+        },
+        "allow_multiple": {
+          "type": "boolean",
+          "description": "If true, more than one option can be correct."
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/mc_option" },
+          "description": "Answer options."
+        },
+        "correct_option_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Correct option ids. Used for system-checked grading."
+        }
+      }
+    },
+    "mc_option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+    "free_response_problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["language", "prompt", "rubric"],
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Language the user should respond in."
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Question or instruction for the user."
+        },
+        "rubric": {
+          "type": "string",
+          "description": "Short criteria for what a good answer should include."
+        }
+      }
+    }
+  }
+}

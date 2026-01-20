@@ -1,0 +1,4 @@
+node_modules/
+.env
+language_state.json
+.next/
