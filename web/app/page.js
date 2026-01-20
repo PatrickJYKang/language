@@ -38,6 +38,7 @@ function MarkdownContent({ text }) {
       </ReactMarkdown>
     </div>
   );
+
 }
 
 function safeJsonParse(raw) {
@@ -284,6 +285,19 @@ export default function Page() {
   }, [messages.length, loading]);
 
   const exercise = useMemo(() => renderExercise(active), [active]);
+
+  const showExercisePanel = !!exercise;
+  const exerciseColClass = (() => {
+    if (!showExercisePanel) return "";
+    const t = active?.problem_type;
+    if (t === "fill_in_blank") return "md:col-span-6";
+    return "md:col-span-5";
+  })();
+  const chatColClass = (() => {
+    if (!showExercisePanel) return "md:col-span-12";
+    if (exerciseColClass === "md:col-span-6") return "md:col-span-6";
+    return "md:col-span-7";
+  })();
 
   function makeActiveFromProposal(proposal) {
     if (!proposal || proposal.enabled !== 1 || !proposal.problem_type) return null;
@@ -722,8 +736,8 @@ export default function Page() {
           {error ? <div className="text-sm text-red-300">{error}</div> : null}
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
+          <div className={chatColClass}>
             <div className="flex h-[60vh] flex-col rounded-2xl border border-zinc-800 bg-zinc-900/40">
               <div className="flex-1 overflow-y-auto p-4">
                 {messages.length === 0 ? (
@@ -848,13 +862,11 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="md:col-span-1">
-            <div className="flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
-              <div className="text-sm font-semibold">Exercise</div>
+          {showExercisePanel ? (
+            <div className={exerciseColClass}>
+              <div className="flex flex-col gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+                <div className="text-sm font-semibold">Exercise</div>
 
-              {!exercise ? (
-                <div className="text-sm text-zinc-400">No active exercise.</div>
-              ) : (
                 <div className="flex flex-col gap-3">
                   <div className="text-sm text-zinc-200">{exercise.title}</div>
                   <div className="flex flex-col gap-2 rounded-xl border border-zinc-800 bg-zinc-950 p-3">
@@ -966,15 +978,15 @@ export default function Page() {
                     </button>
                   </div>
                 </div>
-              )}
+                <div className="mt-4 text-xs text-zinc-500">
+                  Prompts come from the repo-level prompts.json. Schema comes from schema.json.
+                </div>
+              </div>
             </div>
-
-            <div className="mt-4 text-xs text-zinc-500">
-              Prompts come from the repo-level prompts.json. Schema comes from schema.json.
-            </div>
-          </div>
+          ) : null}
         </div>
       </div>
     </div>
   );
+
 }

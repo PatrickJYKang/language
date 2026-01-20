@@ -1,0 +1,640 @@
+Hi — I'm your Spanish practice coach.
+
+Before we start, I have two quick questions to estimate your current level.
+
+Roughly what level are you in Spanish? (beginner / intermediate / advanced, or A1–C2)
+hon spanish 2
+What do you want to focus on right now? (speaking, writing, grammar, vocab, travel, work, etc.)
+school
+Got it — level: honors Spanish 2 (approx B1), focus: school. I’ve prepared a short placement exercise. Click “Start exercise” to begin.
+
+Proposed exercise
+free_response
+Start exercise
+translate the problem to english?
+Sure — here’s an English translation of the exercise prompt:
+
+"In Spanish, write a paragraph of 4–6 sentences describing a typical school day: which classes you have, which is your favorite subject and why, a subject you like less and why, a challenge you face at school and a goal for this school year. Try to use the present tense and at least one past tense if you can."
+
+Hints to help you write (do not copy a full answer — try to write it yourself first):
+
+Aim for 4–6 sentences in Spanish.
+Suggested structure: 1) a typical day and your classes; 2) your favorite subject + why; 3) a subject you like less + why; 4) a challenge you face; 5) a goal for the year. You can combine items to keep it 4–6 sentences.
+Use present tense for routines (e.g., "tengo", "estudio", "mi profesor/a es") and include at least one past-tense verb (e.g., "tuve", "aprendí", "estudié").
+Useful phrases: "mi asignatura favorita es...", "me gusta... porque...", "no me gusta... porque...", "un reto que tengo es...", "mi meta este año es...".
+Keep sentences clear and check verb conjugations. Use simple connectors: "porque", "pero", "aunque".
+When you’ve written your paragraph in Spanish, paste it here and I’ll give targeted feedback and corrections.
+
+Good attempt — you’ve covered many rubric points: you list classes, give a favorite with a reason, use the present tense, include a past-tense sentence, and state a goal. A few focused improvements will make it stronger and meet every requirement.
+
+Tips and brief corrections:
+
+Wording: Instead of “En un día…”, use “Un día típico…” or “Durante un día típico…” for a clearer opening.
+Subject names and articles: consider using articles or plural agreement for subjects. Example: “Mi clase favorita son las matemáticas…” or “Me gustan las matemáticas porque…”
+Missing item: you didn’t state a subject you like less. Add one short sentence: “No me gusta [subject] porque [reason].” That will satisfy the rubric point about a subject you like less.
+Make the challenge more specific: your past sentence is fine (“El año pasado me costó estudiar para los exámenes.”). You can add a short reason: e.g., “El año pasado me costó estudiar para los exámenes porque no organizaba mi tiempo.”
+Make the goal concrete: “Este año mi meta es mejorar mis notas” is good; you can be more specific (e.g., “mi meta es subir mis notas en ciencias a un 8/10”).
+A possible 5-sentence structure (use this as a template, not a full answer to copy):
+
+"Un día típico tengo matemáticas, inglés y ciencias."
+"Mi clase favorita son las matemáticas porque me gustan los números y los retos."
+"No me gusta [subject] porque [short reason]."
+"El año pasado me costó estudiar para los exámenes porque no organizaba mi tiempo."
+"Este año mi meta es mejorar mis notas, especialmente en [subject]."
+Self-check before sending: look for article/noun agreement (las matemáticas), correct verb tense endings (me costó, tengo, es/son), and try to keep 4–6 sentences total.
+
+Revise your paragraph with one added sentence about a subject you like less (or tweak one of your sentences to include that) and paste it here — I’ll give targeted corrections and suggestions for vocabulary or verb forms.
+
+Good work — you met most rubric points (4–6 sentences, favorite subject + reason, a past tense, a goal, and you named a subject you like less). Below are focused corrections and tips so you can improve without me giving a full rewritten paragraph.
+
+"En un día tengo matemáticas, inglés y ciencias."
+Suggestion: "Un día típico tengo clase(s) de matemáticas, inglés y ciencias."
+Why: "En un día" sounds a bit odd; "Un día típico" or "Durante un día típico" is more natural. Also you can say "tengo clase de..." or "tengo clases de..."
+"Mi clase favorita es matemáticas porque es divertida."
+Correction options:
+Peninsular/neutral: "Mi clase favorita son las matemáticas porque son divertidas."
+Latin America (common): "Mi asignatura favorita es la matemática porque es divertida."
+Why: agreement — "matemáticas" is plural, so use "son" and plural adjective; alternatively use the singular form with "asignatura".
+"El año pasado me costó estudiar para los exámenes."
+This is fine. If you want a clearer present challenge, connect it: "Un reto que tengo es organizar mi tiempo; el año pasado me costó estudiar para los exámenes porque no organizaba mi tiempo."
+Why: the rubric asks for a concrete challenge — say what makes it hard (time management, vocab, test anxiety, etc.).
+"Este año mi meta es mejorar mis notas."
+Good. Make it more specific for stronger writing: "Este año mi meta es mejorar mis notas en ciencias" or "...subir mis notas a un 8/10."
+Why: specific goals sound more concrete.
+"No me gusta español porque es muy difícil."
+Correction: "No me gusta el español porque es muy difícil." or "No me gusta la clase de español porque me cuesta mucho."
+Why: include the definite article "el" for languages in this structure, or say "la clase de..." if you mean the class.
+Other small tips:
+
+Use simple connectors to improve flow: además, pero, porque, aunque.
+Check agreement (articles, verbs, adjectives).
+If you want to keep it to 4 sentences, combine short ideas (for example, combine the dislike and the challenge into one sentence).
+Would you like me to: (A) give a single corrected version of your paragraph, or (B) just check your next revised attempt? Reply with A or B.
+
+move on
+Great — you did well and met the rubric. I’ll mark this exercise as complete and we can move on. A few quick, focused corrections (no full rewrite):
+
+Opening: replace “En un día” with “Un día típico” or “Durante un día típico.”
+Agreement with “matemáticas”: either say “Mi clase favorita son las matemáticas porque son divertidas” or use the singular with “asignatura” (e.g., “Mi asignatura favorita es la matemática porque es divertida”).
+Article for languages: say “No me gusta el español” or “No me gusta la clase de español.”
+Make the goal more specific for stronger writing: e.g., “Este año mi meta es mejorar mis notas en ciencias” or “subir mis notas a un 8/10.”
+Notes: your past-tense example (“El año pasado me costó…”) is fine and satisfies the past-tense requirement. Overall only small fixes are needed.
+
+Next: what would you like to do now? Pick one:
+A) I’ll give a single corrected version of your paragraph (you can copy/compare).
+B) Short vocabulary practice about school (5 words).
+C) Brief grammar drill on present vs. past verbs.
+
+Reply A, B, or C and I’ll continue.
+
+Nice work — I marked your placement exercise (placement_b1_school_001) complete. Would you like to try a short 2-blank practice on school vocabulary? Click “Start exercise” to begin.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+help
+Error: Failed to fetch
+
+help
+You’re asking for help with the active fill-in-the-blank — here are short, focused hints so you can improve and try again.
+
+For b1 (Un día típico ____ matemáticas, inglés y ciencias.): identify the subject: this sentence talks about your routine (yo). Use the first-person present of tener. Check the difference: tiene = él/ella/usted (third person), while the first-person form is tengo. Try swapping “tiene” for the first-person form and re-submit the sentence.
+
+For b2 (No me gusta ____ español.): think about how languages are normally referenced in Spanish. It’s common to use the definite article before a language here (el español). Another option is to rephrase the sentence (e.g., “No me gusta estudiar español”) if you want a different structure.
+
+Self-check tips: substitute a subject pronoun to see which verb form you need (e.g., “Yo ___ matemáticas”) and read the sentence aloud to see if the article sounds natural before the language.
+
+Revise your two blanks and paste your updated answers here — I’ll give targeted feedback on verb agreement and article use (no full answer key, just help to learn).
+
+Nice work — your fill-in-the-blank exercise (school_b1_followup_001) was marked correct. Ready for a short 2-blank practice to reinforce tener vs. articles? Click Start exercise to begin.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice work — the fill-in-the-blank exercise (school_b1_next_002) was marked correct and has been cleared. Would you like to continue with a short 2-blank practice to reinforce tener vs. articles? Click “Start exercise” to begin.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+give me a different one
+Error: Failed to fetch
+
+give me a different one
+I can’t switch you to a different exercise from inside this active one, but I can help you finish it quickly (and once it’s done, we’ll do a different one).
+
+Here are hints for each blank:
+
+b1: Un día típico ____ matemáticas, inglés y ciencias.
+
+This is talking about your routine ("I").
+Think of the verb tener (“to have [classes]”).
+Use the present tense, yo-form.
+b2: No me gusta ____ español.
+
+When you say you don’t like a language as a subject, Spanish usually uses a definite article before the language.
+If you mean the class specifically, another common option is to say “the Spanish class” (different structure).
+Try filling in both blanks and send me what you wrote for b1 and b2. I’ll check your choices and explain anything confusing.
+
+If you truly want to abandon this exercise and do a different one, tell me “clear it” and I’ll switch you after it’s closed.
+
+Nice — you just completed the school fill‑in‑the‑blank, practicing tengo (yo-form of tener) and using the article in phrases like el español / la clase de español.
+
+Want a different one: do you prefer (A) school vocabulary or (B) present vs. preterite (past tense)? I’ll make the next quick exercise based on your choice.
+
+what do you think
+I’d pick B: present vs. preterite — Spanish 2 classes usually spend a lot of time on using the right past tense, and it’ll help you a ton for school writing.
+
+Click Start exercise when you’re ready.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+You just finished a short drill choosing present vs. preterite in a school context (e.g., routines vs. “ayer”). Want to do one more like it, or switch to school vocabulary practice?
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice — you just completed a quick school drill choosing present vs. preterite (e.g., Todos los días hago…, La semana pasada fui…, Hoy estudio…). Want to keep practicing past tense, or switch to school vocabulary?
+
+If you want past tense practice, click Start on this one:
+
+Proposed exercise
+fill_in_blank
+Start exercise
+can you see my work
+I can’t literally see your screen, but I can see what you submitted for the exercise here.
+
+Your current entries:
+
+b1: tuve ✅ (looks right for preterite of tener)
+b2: (blank) — you still need the preterite of estar with “anoche”
+b3: hice ✅ (looks right for preterite of hacer)
+Hint for b2 (without giving the whole thing away):
+
+Preterite of estar goes: estuve, estuviste, estuvo, estuvimos, estuvisteis, estuvieron.
+Since the sentence is about you (“I was very tired”), you want the yo form.
+Try filling in b2 and send me what you put.
+
+Nice — you just cleared a short drill on irregular preterite in school contexts (tuve, estuve, hice).
+
+Want to do one more with a few new irregulars (like pude, dije, fui) or switch to school vocabulary instead?
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice — you just completed a drill on irregular preterite in school contexts (pude, dije, fui). Do you want to keep practicing irregular preterite (one more short set), or switch to school vocabulary?
+
+Proposed exercise
+fill_in_blank
+Start exercise
+help
+Let’s fix just what needs fixing in your preterite irregulars.
+
+Your answers:
+
+b1: puse — this looks right (preterite yo of poner).
+b2: tuve — this looks right (preterite yo of tener).
+b3: vino — likely the issue.
+Hint for b3
+Sentence: “Después de clase ____ (venir) a casa y estudié.”
+
+The sentence is still about “I” (because you say “estudié” = I studied).
+So you need the yo preterite form of venir.
+Vino is the él/ella/usted form.
+Self-check trick: replace the blank with a pronoun:
+
+“Después de clase yo ____ a casa…” → choose the yo form.
+Try b3 again and tell me what you put.
+
+Nice — you just cleared the irregular preterite drill (puse, tuve, vine) in a school context.
+
+Want to keep going with more irregular preterites (e.g., dije, traje, pude) or switch to school vocabulary for classes and supplies?
+
+Proposed exercise
+fill_in_blank
+Start exercise
+switch to something else
+If you want to switch, tell me “clear it” and I’ll close this exercise so we can start a different one.
+
+If you’re okay finishing it quickly first (you’re very close):
+
+b1: dije — looks right for the preterite of decir (yo).
+b3: traje — looks right for the preterite of traer (yo).
+b2: puse — check the infinitive: the sentence says (poder), but puse comes from poner.
+Hint for b2 (poder, preterite, “I/you/he… could/was able to”): it follows the irregular pud- pattern (like tener → tuv-, poner → pus-). Use the yo form to match the other answers.
+
+Tell me what you want:
+
+Type clear it (to switch now), or
+Try b2 again and paste your new b2 answer here.
+switch to something else
+Got it — you want to switch. To do that, we should close/clear the current exercise first.
+
+Before we clear it, you’re very close (2/3 look right):
+
+b1: dije fits decir in the preterite (yo).
+b3: traje fits traer in the preterite (yo).
+b2: your puse is the preterite of poner, but the verb given is (poder).
+If you want to finish b2 in 5 seconds, here’s a hint (without giving the full word outright):
+
+poder in the preterite uses the pud- stem (like tener → tuv-, poner → pus-).
+Since there’s no subject change and it’s about “I,” use the yo ending.
+Now, do you want me to clear this exercise immediately so we can switch? Reply: “yes, clear it”.
+
+yes clear it
+Cleared — we’ll switch.
+
+Before we move on: your last answers you entered (dije / pude / traje) look consistent with the preterite yo-form for decir, poder, and traer in those sentences.
+
+Tell me what you want to practice next:
+
+A) school vocabulary (classes + supplies)
+B) grammar: imperfect vs. preterite
+C) speaking-style: short school conversation prompts
+Reply A, B, or C.
+
+We just wrapped up the irregular preterite drill in a school context (forms like dije, pude, traje). Next, do you want to practice school vocabulary or keep going with past tenses (imperfect vs. preterite)?
+
+If you want a quick vocab set, click Start on the exercise below.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+whats this again?
+This exercise is a school vocabulary fill-in-the-blank. You’re choosing the most natural Spanish word for the English hint in parentheses.
+
+What you’ve got so far:
+
+b1 (“pen”): you wrote bolígrafo — that fits well.
+b2 (“exam/test”): you wrote examen — also fits well.
+What’s left:
+
+b3: “Guardo mis papeles en la ____ (backpack).”
+You need a Spanish noun meaning backpack.
+It’s feminine here because the sentence already says la.
+Common options by region include a word that starts with m (very common in school Spanish) or another that starts with m/b depending on country.
+Type your answer for b3 and I’ll help you check whether it sounds natural for your Spanish class/region.
+
+this?
+Yes — this is the vocab exercise.
+
+You’re doing well:
+
+b1: bolígrafo fits “pen.”
+b2: examen fits “exam/test.”
+For b3 you wrote botella, but that means bottle, so it doesn’t match “backpack.”
+
+Hint for b3:
+
+Sentence: “Guardo mis papeles en la ____ (backpack).”
+You want the common school word for backpack. In most Spanish classes, the most standard answer is a word that starts with moch-.
+Also notice it uses la, so the noun should be feminine (that matches the common word).
+Try b3 again (just the single word) and send it here.
+
+like this?
+Almost — you’re very close.
+
+b1: bolígrafo ✅ looks good.
+b2: examen ✅ looks good.
+b3: mochilla → spelling issue.
+Hint for b3 (spelling)
+The word for “backpack” has ch + i + l + a at the end:
+
+Think: mo-CHI-la (3 syllables).
+It has one “l”, not two.
+Try b3 again with that spelling adjustment and submit.
+
+If you want, type just your corrected b3 here and I’ll confirm it looks right before you re-enter it in the exercise.
+
+Nice — you just completed the school vocab fill-in (bolígrafo/pluma, examen/test, mochila). Want to do another quick set focusing on classroom verbs (e.g., “to turn in,” “to take notes”), or switch back to past tense practice?
+
+Proposed exercise
+fill_in_blank
+Start exercise
+i dont know any of this
+No problem — these are super common “classroom verbs,” and you don’t need to know them yet to learn them.
+
+Here are hints + options for each blank (I’ll avoid giving a single forced answer; choose what your class uses):
+
+b1) Tengo que ____ la tarea hoy (to turn in).
+In school Spanish, “turn in/hand in homework” is usually:
+
+entregar (very common/neutral)
+entregarle (if you add who you give it to: entregarle la tarea al profesor)
+Some classes also use presentar (“to submit”), depending on teacher
+Self-check: it’s an infinitive after tengo que, so you want a verb like entregar/presentar, not a conjugated form.
+
+b2) En clase ____ apuntes (to take notes).
+Spanish usually says “to take notes” as:
+
+tomar apuntes (most common)
+Self-check: this one needs yo, present tense (“In class I …”). So you want the yo form of the verb that goes with apuntes.
+
+b3) El profesor nos ____ mucha tarea (to give/assign).
+For “the teacher gives/assigns us homework,” common verbs:
+
+poner (very common for assigning homework/tests: poner tarea / poner un examen)
+dar (also common: dar tarea)
+Self-check: subject is El profesor → 3rd person singular present (él/ella form).
+
+If you tell me which country/teacher style you’re using (or just pick what sounds familiar), I can steer you to the most “natural” choice.
+
+For now, try filling with your best guess and paste what you put for b1, b2, b3 (even if you’re unsure).
+
+Nice — you just cleared a classroom-verbs drill (handing in homework, taking notes, and assigning homework). Want to keep going with school Spanish: vocab (supplies) or grammar (present vs. preterite)? Reply “vocab” or “grammar.”
+
+different grammar topic
+Let’s switch to a different grammar topic: ser vs. estar (super common in Spanish 2, and very useful for school descriptions).
+
+Click Start exercise when you’re ready.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice — you just finished a ser vs. estar mini-drill for school: es simpático (trait), estoy cansado (condition), and está en el segundo piso (location).
+
+Want to level it up with a quick multiple-choice set on tricky cases (e.g., aburrido vs aburrido, events like La clase es en…)?
+
+Proposed exercise
+multiple_choice
+Start exercise
+Nice — you just cleared a ser vs. estar multiple-choice set about school descriptions (size/traits vs. location/temporary states).
+
+Next up, want a quick practice on another Spanish 2 grammar topic: direct object pronouns (lo/la/los/las)? Click Start exercise to try a short one.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice — you just completed a quick drill on direct object pronouns in a school context (using la/los/lo correctly).
+
+Want to level up with double pronouns (me/te/le + lo/la/los/las, e.g., “Se lo di”)?
+
+Proposed exercise
+fill_in_blank
+Start exercise
+can you explain the second blank?
+Blank b2 is practicing double pronouns with “prestar”.
+
+Sentence: “¿Me vas a prestar la calculadora? Sí, ____ ____ voy a prestar.”
+
+1) Identify who and what
+What is being lent? la calculadora → direct object pronoun = la.
+To whom is it being lent? The question says me (“to me”) → indirect object pronoun = me.
+2) Pronoun order
+When you use both pronouns before a conjugated verb, the order is:
+indirect (me/te/le/nos/os/les) + direct (lo/la/los/las)
+
+So you want: me + la.
+
+3) Why it’s not “se” here
+The le/les → se change only happens when le/les is followed by lo/la/los/las. Here you have me, not le, so no change.
+
+4) Put it back into the sentence
+“Sí, ____ ____ voy a prestar.” → fill with me la.
+
+Try entering me la for blank b2.
+
+If you want an extra self-check: you can also say “Sí, voy a prestártela.” (same meaning, pronouns attached to the infinitive), but your exercise is specifically the two blanks before voy a prestar.
+
+explain what the first sentence menas?
+The first sentence “Le di el libro al profesor.” means:
+
+“I gave the book to the teacher.”
+
+Breakdown:
+
+Le = “to him/to her/to you (formal)” → here it means “to the teacher” (an indirect object)
+di = “I gave” (preterite of dar)
+el libro = “the book”
+al profesor = “to the teacher” (literally a + el profesor)
+How it connects to the blanks:
+
+The second sentence “____ ____ di.” is just repeating the idea using pronouns instead of al profesor and el libro.
+Since it’s le + lo/la/los/las, the le changes to se.
+You entered “se lo” for b1 — that matches the idea “I gave it to him.”
+
+If you want, paste the full b1 line you’re submitting (with your two words filled in), and I’ll help you check word order/punctuation.
+
+no the first sentence in the second blank
+In blank b2, the first sentence is:
+
+“¿Me vas a prestar la calculadora?”
+
+It means: “Are you going to lend me the calculator?” (or “Will you lend me the calculator?”)
+
+Breakdown:
+
+¿…? = it’s a question.
+Me = to me.
+vas a = “are you going to” (near future with ir a).
+prestar = to lend.
+la calculadora = the calculator.
+Why this matters for the two blanks in the answer sentence:
+
+The question already includes me (“to me”) → that’s the indirect object pronoun you’ll likely repeat.
+“the calculator” (la calculadora) → that’s feminine singular, so the direct object pronoun will match la.
+Order when you use two pronouns before a verb: indirect + direct.
+So in “Sí, ____ ____ voy a prestar,” think: “Yes, I’m going to lend it to me” → put to me first, then it.
+
+Try filling b2 with those two pronouns and paste what you wrote for b2—I’ll tell you if the pronoun choices/order make sense.
+
+help
+Let’s fix each blank using a quick method: who? (indirect) + what? (direct), and remember the le/les → se change only happens with le/les + lo/la/los/las.
+
+b1) Le di el libro al profesor. ____ ____ di.
+Your answer: se lo
+
+Here, to the teacher = le (indirect), the book = lo (direct).
+Because it would be le + lo, it changes to se lo. So b1 looks good.
+b2) ¿Me vas a prestar la calculadora? Sí, ____ ____ voy a prestar.
+Your answer: tu la
+Two issues:
+
+“tu” is a subject possessive (“your”), not the pronoun “to me.” The question starts with me (“to me”), so you’ll keep me as the indirect pronoun.
+“la calculadora” is feminine singular → direct pronoun = la. Order rule: indirect + direct → me + la. Also: there is no se-change here because you’re not using le/les.
+b3) Compré las carpetas para mis amigos y ____ ____ compré.
+Your answer: se las
+
+What: las carpetas → direct = las ✅
+To whom: para mis amigos → that corresponds to les (to them).
+Since it’s les + las, it becomes se las. So b3 looks good.
+What to change
+Only b2 needs fixing: use the indirect pronoun from the question + the direct pronoun matching “la calculadora.”
+
+If you want, paste just your revised b2 (two words) and I’ll tell you if the pronouns and order look right before you resubmit.
+
+We just finished a double-pronouns drill in a school context (including the le/les → se change), and you got it cleared.
+
+Next, want to practice (A) double pronouns with commands (e.g., Dámelo / No me lo des) or (B) double pronouns with "ir a" / infinitives (e.g., Te la voy a prestar / Voy a prestártela)? Reply A or B.
+
+B
+Great — B (double pronouns with “ir a” / infinitives).
+
+Key rule (quick): you can put the pronouns before the conjugated verb or attach them to the infinitive:
+
+Te la voy a prestar. = I’m going to lend it to you.
+Voy a prestártela. = same meaning.
+Now click Start exercise to practice a few like that.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+actually do something else
+If you want to “do something else,” we should stop/clear this active exercise first—otherwise the app will keep you in these blanks.
+
+If you’re okay finishing it quickly (it’s only 3 items), here are non-spoiler hints so you can fill them fast:
+
+How to solve each one
+Rule: pick to whom? (indirect: me/te/le/nos/os/les) + what? (direct: lo/la/los/las). Order is indirect + direct. If you get le/les + lo/la/los/las, change le/les → se.
+
+b1) Voy a dar ____ ____ mañana.
+
+Ask: give what (it/him/her/them)? and give to whom?
+If the sentence doesn’t say the people/thing, it’s usually implying something like “I’m going to give it to you/him/her/them.” Choose pronouns that make sense in context.
+b2) ¿Vas a prestar la calculadora a Ana? Sí, ____ ____ voy a prestar.
+
+To whom? “a Ana” → indirect pronoun = le (to her).
+What? “la calculadora” → direct pronoun = la.
+Watch the special change when le + la happens.
+b3) No voy a explicar la lección a ustedes. No ____ ____ voy a explicar.
+
+To whom? “a ustedes” → indirect pronoun = les (to you all).
+What? “la lección” → direct pronoun = la.
+Again, watch the special change with les + la.
+If you want to switch topics right now, reply: “clear it” and I’ll close this exercise. If you want to finish it quickly, tell me what you think for b2 (two words) and I’ll guide you if it needs a tweak.
+
+just switch
+To switch topics, we need to clear/close the active exercise first. I can’t switch you mid-exercise without doing that.
+
+If you want, I can also help you finish it in ~30 seconds (no full answers, just hints), but since you said “just switch,” I’ll clear it now.
+
+Tell me what you want to switch to (pick one):
+
+1) Ser vs. estar
+2) Preterite vs. imperfect
+3) School vocabulary
+4) Pronunciation/reading practice
+Okay— we just cleared the double-pronouns exercise (using ir a + infinitive, like Te la voy a prestar). Let’s switch gears.
+
+I can set up a new short exercise next—pick one: 1) ser vs. estar or 2) preterite vs. imperfect.
+
+1
+Cool—let’s do ser vs. estar in a school context.
+
+Click Start exercise when you’re ready.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice — you just cleared a ser vs. estar mini-drill in the present tense (es simpático, estoy cansado/a, está al lado de…).
+
+Want to do the next step: ser vs. estar with adjectives that change meaning (like aburrido, listo) in a school context?
+
+Proposed exercise
+multiple_choice
+Start exercise
+a different excersise
+You want a different exercise. Since there’s an active multiple‑choice exercise right now, I can’t propose a new one until this one is cleared.
+
+Two ways forward:
+
+Fastest: finish this one (it’s only 4 items). I’ll give you hints so you can choose quickly.
+If you really want to switch now, tell me “clear it” and I’ll close it.
+Quick hints (no answer key)
+This set is about adjectives that change meaning with ser vs. estar:
+
+With ser, the adjective usually describes a more general/characteristic quality (“is … as a trait”).
+With estar, it usually describes a temporary state/condition (“feels/is … right now”).
+Apply that:
+
+Aburrido/a
+“boring” (describes the class itself) → think trait.
+“bored” (how students feel) → think state.
+Listo
+“clever/smart” (a trait) → think trait.
+“ready” (a state) → think state.
+If you want, tell me your choices (A–D), and I’ll explain any that feel confusing.
+
+If you prefer switching immediately, reply: clear it.
+
+It looks like that answer isn't fully correct. Want help?
+
+Need a hint?
+Yes
+Yes — please help me with this exercise.
+You’ve got a ser vs. estar exercise where the adjective changes meaning.
+
+Core rule (for this set)
+ser = describes a trait/characteristic (what something/someone is like in general)
+estar = describes a temporary state/condition (how someone/something is right now)
+Apply it to each option
+A) “La clase ___ aburrida. (The class is boring.)”
+
+“Boring” describes the class as a thing (a characteristic of the class) → think ser.
+B) “La clase ___ aburrida. (The class is bored.)”
+
+“Bored” describes a state (how it feels right now). BUT: in Spanish, it’s much more natural to say “La clase está aburrida” only if you mean the students/class group are bored. (Often you’d also hear “Los estudiantes están aburridos.”) → think estar.
+C) “Mi hermano ___ listo. (My brother is clever.)”
+
+“Clever/smart” is a trait → think ser.
+D) “Mi hermano ___ listo. (My brother is ready.)”
+
+“Ready” is a state → think estar.
+Why your attempt might not be accepted
+You selected only A, but the app likely expects you to choose the best option for the prompt’s meaning across all four sentences (each one has its own blank). So you’ll need to answer A, B, C, and D.
+
+If you tell me what you chose for B, C, and D, I’ll help you spot exactly which one is tripping you up (without just handing you the full set).
+
+It looks like that answer isn't fully correct. Want help?
+
+Need a hint?
+Yes
+We just cleared the ser vs. estar exercise on meaning-changing adjectives (aburrido/a = boring vs. bored; listo = clever vs. ready). Next, we can build on that with another Spanish 2 staple: preterite vs. imperfect in school stories.
+
+Click Start if you want to practice it with a short fill-in-the-blank (3 items).
+
+Proposed exercise
+fill_in_blank
+Start exercise
+Nice work — you just cleared a past-tense drill choosing preterite vs. imperfect in school contexts (estudiaba / tuve / hacía).
+
+Want to keep going with one more short set on preterite vs. imperfect (including signal words like siempre, ayer, mientras)? Click Start exercise when you’re ready.
+
+Proposed exercise
+fill_in_blank
+Start exercise
+It looks like that answer isn't fully correct. Want help?
+
+Need a hint?
+Yes
+Yes — please help me with this exercise.
+Let’s fix each blank using a quick checklist. You’re very close.
+
+b1) De niño, a menudo ____ (ir) a la escuela en autobús.
+Your answer: iba
+
+This sentence describes a habit in the past (“as a kid,” “often”), so the imperfect is the right tense.
+Iba is the imperfect of ir (yo). This one looks good.
+b2) El lunes pasado ____ (olvidar) mi cuaderno en casa.
+Your answer: olvidiá
+
+“El lunes pasado” points to a finished, specific event → usually preterite.
+Also, the spelling olvidiá isn’t a valid past form here. Hint: the preterite yo form of olvidar ends like many -ar verbs: -é (think hablé, estudié). Try writing the preterite yo form of olvidar.
+b3) Mientras nosotros ____ (estudiar), el profesor explicó la lección.
+Your answer: estudiaba
+
+With mientras + an ongoing background action, you typically use the imperfect.
+But the subject is nosotros, so the verb must be nosotros imperfect, not yo/él. Hint: imperfect -ar endings are -aba, -abas, -aba, -ábamos, -abais, -aban. Pick the -ábamos form for estudiar.
+What to change
+Keep b1 as is.
+Fix b2 to the preterite yo form (ends in -é).
+Fix b3 to the nosotros imperfect form (ends in -ábamos).
+Send me your updated b2 and b3 and I’ll confirm they match the time markers and subject agreement.
+
+Nice — you just cleared the past-tense drill by choosing imperfect for habits/background (iba, estudiábamos) and preterite for a completed event (olvidé).
+
+Want to do one more short set with signals like ayer / siempre / mientras / de repente?
+
+Proposed exercise
+fill_in_blank
+Start exercise

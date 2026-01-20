@@ -156,7 +156,7 @@ export async function POST(req) {
       return Response.json({ error: "Missing OPENAI_API_KEY" }, { status: 500 });
     }
 
-    const model = process.env.OPENAI_MODEL || "gpt-5-mini";
+    const model = process.env.OPENAI_MODEL || "gpt-5.2";
 
     const body = await req.json();
     const requestedMode = body?.mode;
